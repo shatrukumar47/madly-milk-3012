@@ -1,0 +1,343 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: Poppins, sans-serif;
+}
+
+/* <------------------------ Navbar Styling ------------------------------> */
+#navbar{
+    width: 100%;
+    
+}
+#navbar>.nav1{
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#navbar>.nav1>.icons{
+    /* border: 1px solid red; */
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+}
+#navbar>.nav1>.icons>i{
+    font-size: 33px;
+    color: #6d726d;
+}
+#navbar>.nav1>.search-bar>input{
+    font-size: 14px;
+    line-height: 24px;
+    border: none;
+    text-decoration: underline;
+}
+#navbar>.nav2{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    padding: 10px;
+    /* border: 1px solid red; */
+}
+#navbar>.nav2>a{
+    text-decoration: none;
+    font-size: 12px;
+    color: #6d726d;
+}
+#navbar>.nav3{
+    width: 100%;
+    background: #5B5B5B;
+}
+#navbar>.nav3>div{
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+#navbar>.nav3>div>a{
+    text-decoration: none;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* <---------------------------Body Styling -------------------------------------------------> */
+
+img[alt="sale"] {
+  width: 90%;
+  margin: auto;
+  display: block;
+}
+.box1{
+    width: 90%;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+}
+.box1>img{
+    width: 100%;
+}
+img[alt="signup"] {
+    width: 90%;
+    margin: auto;
+    display: block;
+}
+body>h2{
+    text-align: center;
+    margin: 40px;
+    color: #9D6A37;
+    font-family: Poppins, sans-serif;
+}
+.box2{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    gap: 10px;
+}
+.box2>div>img{
+    width: 100%;
+}
+.box2>div>a{
+    font-size: 12px;
+    text-decoration: none;
+    color: black;
+    line-height: 20px;
+}
+.box2>div>div>a:first-child{
+    font-weight: bolder;
+    font-size: 14px;
+    text-decoration: none;
+    margin-right: 5px;
+    color: black;
+}
+.box2>div>div>a:nth-child(2){
+    font-size: 14px;
+    text-decoration: line-through;
+    color: #8C8E8C;
+    margin-right: 5px;
+}
+.box2>div>div>a:last-child{
+    font-weight: bolder;
+    font-size: 14px;
+    color: green;
+    text-decoration: none;
+    margin-right: 5px;
+}
+.explore-most-wanted{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+}
+.explore-most-wanted>div>img{
+    width: 100%;
+}
+.explore-most-wanted>div>a{
+    color: #777977;
+    display: block;
+    font-size: 16px;
+    font-weight: bolder;
+    text-decoration: none;
+    line-height: 24px;
+
+}
+.explore-most-wanted>div>a:last-child{
+    color: #777977;
+    display: block;
+    font-size: 12px;
+    text-decoration: none;
+    line-height: 24px;
+}
+.new-arrivals{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+}
+.new-arrivals>div>img{
+    width: 100%;
+}
+.new-arrivals>div>a{
+    color: #777977;
+    display: block;
+    font-size: 16px;
+    font-weight: bolder;
+    text-decoration: none;
+    line-height: 24px;
+}
+.new-arrivals>div>a:last-child{
+    color: #777977;
+    display: block;
+    font-size: 12px;
+    text-decoration: none;
+    line-height: 24px;
+}
+.home-interior-trends{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+}
+.home-interior-trends>div>img{
+    width: 100%;
+}
+.home-interior-trends>div>a{
+    color: #777977;
+    display: block;
+    font-size: 16px;
+    font-weight: bolder;
+    text-decoration: none;
+    line-height: 24px;
+}
+.home-interior-trends>div>a:last-child{
+    color: #777977;
+    display: block;
+    font-size: 12px;
+    text-decoration: none;
+    line-height: 24px;
+}
+.checkout-collections{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+}
+.checkout-collections>div>img{
+    width: 100%;
+}
+.checkout-collections>div>a{
+    color: #777977;
+    display: block;
+    font-size: 16px;
+    font-weight: bolder;
+    text-decoration: none;
+    line-height: 24px;
+}
+.checkout-collections>div>a:last-child{
+    color: #777977;
+    display: block;
+    font-size: 12px;
+    text-decoration: none;
+    line-height: 24px;
+}
+.policy-achievement{
+    width: 50%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+.policy-achievement>div{
+    display: flex;
+    color: #777977;
+}
+
+
+/* <--------------------------Footer Styling--------------------------------------------------------> */
+
+.footer{
+    width: 100%;
+    background: #F5F5F5;
+}
+.footer>.footer-box1{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 10px;
+    margin-top: 10px;
+    padding-top: 20px;
+}
+.footer>.footer-box1>div>a{
+    display: block;
+    line-height: 24px;
+    text-decoration: none;
+    color: #777977;
+}
+.footer>.footer-box1>div:last-child>img{
+    width: 70%;
+}
+.footer>.footer-box2{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    margin-top: 10px;
+    padding-top: 20px;
+}
+.footer>.footer-box2>div>a{
+    line-height: 24px;
+    text-decoration: none;
+    color: #777977;
+}
+.footer>.footer-box2>div>p{
+    color: #777977;
+    line-height: 24px;
+}
+.footer>.payment-partners{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 70% 30% ;
+    gap: 20px;
+}
+.footer>.payment-partners>div>div>img{
+    width: 76px;
+}
+.footer>.payment-partners>div:last-child > div > img{
+    width: 46px;
+}
+.footer>.terms-cond{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+.footer>.terms-cond>a{
+    display: block;
+    line-height: 24px;
+    text-decoration: none;
+    color: #777977;
+}
+.footer>#copyright{
+    text-align: center;
+    margin: 20px;
+    line-height: 24px;
+    color: #777977;
+}
+img{
+    cursor: pointer;
+}
