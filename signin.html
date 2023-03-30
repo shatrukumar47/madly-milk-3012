@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css"
+    />
+    <title>Signin</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0px;
+            padding: 0px;
+            font-family: Manrope, sans-serif;
+        }
+        .container{
+            width: 418px;
+            margin: 100px auto;
+            text-align: center;
+            padding: 20px;
+            box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+            border-radius: 10px;
+        }
+        img{
+            width: 100%;
+        }
+        h1{
+            color: #9D6A37;
+        }
+        form{
+            width: 100%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        form>input{
+            padding: 10px;
+            margin-bottom: 20px;
+            line-height: 24px;
+        }
+        form>input::placeholder{
+            font-size: 18px;
+        }
+        #submit{
+            background: #FC642B;
+            border: none;
+            color: white;
+            padding: 10px;
+            font-weight: 700;
+            font-size: 18px;
+        }
+        #submit:hover{
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        }
+        p{
+            color:  #6d726d;
+        }
+        p>a{
+            color:#FC642B;
+            text-decoration: none;
+        }
+        button{
+            width: 100%;
+            margin: auto;
+            display: block;
+            margin-bottom: 20px;
+            padding: 10px;
+            font-size: 18px;
+            background: white;
+            color:  #393b39;
+            font-weight: bold;
+            border: 1px solid grey;
+        }
+        button:hover{
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+            color: #FC642B;
+        }
+        #facebook{
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://ii1.pepperfry.com/assets/57a925f0-f941-4f6d-b6af-8e67bb7de58b.jpg" alt="">
+        <h1>Sign Up Or Log In</h1>
+    <form>
+        <input type="email" id="email" placeholder="Enter Email Id">
+        <input type="password" id="password" placeholder="Password">
+        <input type="submit" value="Login" id="submit">
+    </form>
+    <p>By continuing, you agree to our <a href="">Terms & Conditions</a></p>
+    <p>Or</p>
+    <p><a href="./signup.html" target="_blank">Signup</a> using</p>
+    <button><i class="fab fa-google"></i> Sign in with Google</button>
+    <button id="facebook"><i class="fab fa-facebook-f"></i> Facebook</button>
+    </div>
+</body>
+</html>
