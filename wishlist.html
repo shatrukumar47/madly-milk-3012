@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wishlist</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0px;
+        padding: 0px;
+        font-family: Poppins, sans-serif;
+      }
+      .navbar {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+          rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        background: #28279c;
+      }
+      img[alt="logo"] {
+        width: 200px;
+      }
+      h1 {
+        color: white;
+        margin-right: 30px;
+      }
+      /* <-----------------------------------------Product List Css----------------------------------------> */
+
+      #container{
+        width: 90%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        row-gap: 40px;
+        column-gap: 20px;
+        margin-top: 30px;
+        margin-bottom: 50px;
+      }
+      #container>div{
+          padding:10px ;
+          box-shadow: #28279C 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+      }
+      #container>div>img{
+          width: 100%;
+      }
+      #container>div>h4{
+          color:#9D6A37;
+      }
+      #container>div>p{
+          color: #6d726d;
+      }
+      .buttondiv{
+          width: 100%;
+          margin: auto;
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 20px;
+          margin-top: 30px;
+      }
+      .buttondiv button{
+          background: #FC642B;
+          border: none;
+          color: white;
+          padding: 10px;
+          font-size: 18px;
+          border-radius: 10px;
+      }
+      .buttondiv button:hover{
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+      }
+
+    /* <-------------------------------------------------Footer Css --------------------------------------------> */
+      .footer{
+        width: 100%;
+        background: #F5F5F5;
+        padding-top: 20px;
+        padding-bottom: 30px;
+        
+      }
+      .payment-partners {
+        width: 90%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 70% 30%;
+        gap: 20px; 
+      }
+      .payment-partners > div > div > img {
+        width: 76px;
+      }
+      .payment-partners > div:last-child > div > img {
+        width: 46px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <img src="./HummingBird.png" alt="logo" id="logo"/>
+      <h1>Wish 🤍 List</h1>
+    </div>
+
+    <!-- <-----------------------------------------Product------------------------------------------------------------->
+    <div id="container">
+
+    </div>
+
+    <!-- <--------------------------------Footer------------------------------------------------------------------->
+   
+
+  <div class="footer">
+    <div class="payment-partners">
+      <div>
+        <h4>We Accept</h4>
+        <div>
+          <img src="https://ii2.pepperfry.com/assets/w23-pf-visa.jpg" alt="" />
+          <img
+            src="https://ii3.pepperfry.com/assets/w23-pf-master-card.jpg"
+            alt=""
+          />
+          <img
+            src="https://ii1.pepperfry.com/assets/w23-pf-maestro.jpg"
+            alt=""
+          />
+          <img
+            src="https://ii2.pepperfry.com/assets/w23-pf-american-express.jpg"
+            alt=""
+          />
+          <img src="https://ii3.pepperfry.com/assets/w23-pf-rupay.jpg" alt="" />
+          <img
+            src="https://ii2.pepperfry.com/assets/w23-pf-dinners-club.jpg"
+            alt=""
+          />
+          <img
+            src="https://ii3.pepperfry.com/assets/w23-pf-wallet.jpg"
+            alt=""
+          />
+          <img
+            src="https://ii3.pepperfry.com/assets/w23-pf-net-banking.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+      <div>
+        <h4>Like What You See? Follow us Here</h4>
+        <div>
+          <img
+            src="https://ii1.pepperfry.com/assets/w23-pf-social-insta.png"
+            alt=""
+          />
+          <img
+            src="https://ii1.pepperfry.com/assets/w23-pf-social-fb.png"
+            alt=""
+          />
+          <img
+            src="https://ii2.pepperfry.com/assets/w23-pf-social-pinterest.png"
+            alt=""
+          />
+          <img
+            src="https://ii1.pepperfry.com/assets/w23-pf-social-linkedin.png"
+            alt=""
+          />
+          <img
+            src="https://ii3.pepperfry.com/assets/w23-pf-social-youtube.png"
+            alt=""
+          />
+          <img
+            src="https://ii1.pepperfry.com/assets/w23-pf-social-twitter.png"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  </body>
+  <script>
+
+    let logo = document.getElementById("logo");
+    logo.addEventListener("click",function(){
+        window.location.href = 'index.html';
+    })
+
+    let WishlistData = JSON.parse(localStorage.getItem("wishlist"));
+    let CartData = JSON.parse(localStorage.getItem("cart-data")) || [];
+
+    let container = document.getElementById("container");
+    Display(WishlistData)
+
+    function Display(data){
+      container.innerHTML = null;
+      data.forEach(function(element){
+          let card = document.createElement("div");
+          let image = document.createElement("img");
+          let name = document.createElement("h4");
+          let price = document.createElement("p");
+          let rating = document.createElement("p");
+          let description = document.createElement("p");
+          let div = document.createElement("div");
+          div.setAttribute("class","buttondiv")
+          let RemoveBtn = document.createElement("button");
+          let addToCartBtn = document.createElement("button");
+
+          image.setAttribute("src",element.image);
+          name.innerText = element.title;
+          price.innerText = `₹${element.price}`;
+          rating.innerText = element.rating;
+          description.innerText = element.description;
+          RemoveBtn.innerText = "Remove";
+          addToCartBtn.innerText = "Add To Cart";
+
+          RemoveBtn.addEventListener("click",function(){
+            WishlistData = WishlistData.filter(function(ele){
+              if(element.id !== ele.id){
+                return true;
+              }else{
+                return false;
+              }
+            })
+            localStorage.setItem("wishlist",JSON.stringify(WishlistData));
+            Display(WishlistData);
+          })
+
+          addToCartBtn.addEventListener("click",function(){
+              let flag = checkAvailability(element);
+              if(flag==true){
+                  alert("Already Present in the Cart 🎉");
+              }else{
+                  CartData.push(element);
+                  localStorage.setItem("cart-data",JSON.stringify(CartData));
+                  alert("Added Successfully in the Cart 🛒")
+              }
+            
+          })
+
+          div.append(RemoveBtn,addToCartBtn)
+          card.append(image,name,price,rating,description,div)
+          container.append(card);
+      })
+    }
+
+
+    function checkAvailability(ele){
+        for(let i=0; i<CartData.length; i++){
+            if(ele.id == CartData[i].id){
+                return true;
+            }
+        }
+        return false;
+    }
+  </script>
+</html>

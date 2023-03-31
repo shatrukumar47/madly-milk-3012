@@ -72,9 +72,8 @@ input[placeholder="Search..."]::placeholder{
     display: flex;
     justify-content: center;
     gap: 20px;
-    
-    padding: 10px;
     background: white;
+    padding: 10px;
 }
 #navbar>.nav2>a{
     text-decoration: none;
@@ -102,11 +101,11 @@ input[placeholder="Search..."]::placeholder{
 
 /* <-------------------------DropDown Menu-------------------------> */
 .drop-down-menu{
-    width: 95%;
+    width: 100%;
     display: flex;
     background: white;
     position: absolute;
-    left: 40px;
+    left: 0px;
     top:40px;
     /* border: 1px solid red; */
     display: none;
@@ -146,196 +145,96 @@ input[placeholder="Search..."]::placeholder{
     margin-bottom: 5px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* <---------------------------Body Styling -------------------------------------------------> */
-
-img[alt="sale"] {
-  width: 90%;
-  margin: auto;
-  display: block;
-}
-.box1{
-    width: 90%;
-    margin: 20px auto;
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 10px;
-}
-.box1>img{
-    width: 100%;
-}
-img[alt="signup"] {
+/* <---------------------------Product List Styling -------------------------------------------------> */
+#filtercont{
     width: 90%;
     margin: auto;
-    display: block;
+    margin-top: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-body>h2{
-    text-align: center;
-    margin: 40px;
-    color: #9D6A37;
-    font-family: Poppins, sans-serif;
+#sortby{
+    background:  #28279C;
+    border: none;
+    color: white;
+    padding: 10px;
+    font-size: 18px;
 }
-.box2{
-    width: 90%;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(6,1fr);
-    gap: 10px;
+#pricerange>input{
+    background:  #28279C;
+    border: none;
+    color: white;
+    padding: 10px;
+    font-size: 18px;
 }
-.box2>div>img{
-    width: 100%;
+#pricerange>input::placeholder{
+    color: white;
 }
-.box2>div>a{
-    font-size: 12px;
-    text-decoration: none;
-    color: black;
-    line-height: 20px;
+#pricerange>button{
+    background: #FC642B;
+    border: none;
+    color: white;
+    padding: 10px;
+    font-size: 18px;
 }
-.box2>div>div>a:first-child{
-    font-weight: bolder;
-    font-size: 14px;
-    text-decoration: none;
-    margin-right: 5px;
-    color: black;
+#pricerange>button:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
-.box2>div>div>a:nth-child(2){
-    font-size: 14px;
-    text-decoration: line-through;
-    color: #8C8E8C;
-    margin-right: 5px;
-}
-.box2>div>div>a:last-child{
-    font-weight: bolder;
-    font-size: 14px;
-    color: green;
-    text-decoration: none;
-    margin-right: 5px;
-}
-.explore-most-wanted{
-    width: 90%;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 10px;
-}
-.explore-most-wanted>div>img{
-    width: 100%;
-}
-.explore-most-wanted>div>a{
-    color: #777977;
-    display: block;
-    font-size: 16px;
-    font-weight: bolder;
-    text-decoration: none;
-    line-height: 24px;
-
-}
-.explore-most-wanted>div>a:last-child{
-    color: #777977;
-    display: block;
-    font-size: 12px;
-    text-decoration: none;
-    line-height: 24px;
-}
-.new-arrivals{
+#container{
     width: 90%;
     margin: auto;
     display: grid;
     grid-template-columns: repeat(4,1fr);
-    gap: 10px;
+    row-gap: 40px;
+    column-gap: 20px;
+    margin-top: 30px;
+    margin-bottom: 50px;
 }
-.new-arrivals>div>img{
+#container>div{
+    padding:10px ;
+    box-shadow: #28279C 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+#container>div>img{
     width: 100%;
 }
-.new-arrivals>div>a{
-    color: #777977;
-    display: block;
-    font-size: 16px;
-    font-weight: bolder;
-    text-decoration: none;
-    line-height: 24px;
+#container>div>h4{
+    color:#9D6A37;
 }
-.new-arrivals>div>a:last-child{
-    color: #777977;
-    display: block;
-    font-size: 12px;
-    text-decoration: none;
-    line-height: 24px;
+#container>div>p{
+    color: #6d726d;
 }
-.home-interior-trends{
-    width: 90%;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 10px;
-}
-.home-interior-trends>div>img{
+.buttondiv{
     width: 100%;
-}
-.home-interior-trends>div>a{
-    color: #777977;
-    display: block;
-    font-size: 16px;
-    font-weight: bolder;
-    text-decoration: none;
-    line-height: 24px;
-}
-.home-interior-trends>div>a:last-child{
-    color: #777977;
-    display: block;
-    font-size: 12px;
-    text-decoration: none;
-    line-height: 24px;
-}
-.checkout-collections{
-    width: 90%;
     margin: auto;
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 10px;
-}
-.checkout-collections>div>img{
-    width: 100%;
-}
-.checkout-collections>div>a{
-    color: #777977;
-    display: block;
-    font-size: 16px;
-    font-weight: bolder;
-    text-decoration: none;
-    line-height: 24px;
-}
-.checkout-collections>div>a:last-child{
-    color: #777977;
-    display: block;
-    font-size: 12px;
-    text-decoration: none;
-    line-height: 24px;
-}
-.policy-achievement{
-    width: 50%;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 10px;
-    margin-top: 20px;
-}
-.policy-achievement>div{
     display: flex;
-    color: #777977;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    margin-top: 30px;
 }
+.buttondiv button{
+    background: #FC642B;
+    border: none;
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 10px;
+}
+.buttondiv button:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* <--------------------------Footer Styling--------------------------------------------------------> */

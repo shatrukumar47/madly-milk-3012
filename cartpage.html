@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add to Cart</title>
+      <style>
+      *{
+      box-sizing: border-box;
+      }
+      body{
+          margin: 0px;
+          padding: 0px;
+          font-family: Poppins, sans-serif;
+      }
+      .navbar{
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+          background: #28279C;
+      }
+      .navbar>img{
+          width: 200px;
+      }
+      .navbar>h1{
+        color: white;
+        margin-right: 30px;
+      }
+
+    /* <---------------------------Body Styling -------------------------------------------------> */
+
+      #total{
+        text-align: center;
+        color: white;
+        font-size: 40px;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+      }
+
+
+
+
+
+
+
+
+
+
+   /* <-------------------------------------------------Footer Css --------------------------------------------> */
+
+      .footer{
+        width: 100%;
+        background: #F5F5F5;
+        padding-top: 20px;
+        padding-bottom: 30px;
+        
+      }
+      .payment-partners {
+        width: 90%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 70% 30%;
+        gap: 20px; 
+      }
+      .payment-partners > div > div > img {
+        width: 76px;
+      }
+      .payment-partners > div:last-child > div > img {
+        width: 46px;
+      }
+
+    </style>
+</head>
+<body>
+   <div class="navbar">
+    <img src="./HummingBird.png" alt="" id="logo">
+    <h1>Cart 🛒</h1>
+   </div>
+
+   <!-- <-----------------------------------------Product-------------------------------------------------------------> 
+   <h1 id="total"> Total</h1>
+   <div class="container">
+
+   </div>
+
+
+
+   <!-- <--------------------------------Footer------------------------------------------------------------------->
+
+   <div class="footer">
+    <div class="payment-partners">
+      <div>
+        <h4>We Accept</h4>
+        <div>
+          <img src="https://ii2.pepperfry.com/assets/w23-pf-visa.jpg" alt="" />
+          <img
+            src="https://ii3.pepperfry.com/assets/w23-pf-master-card.jpg"
+            alt=""
+          />
+          <img
+            src="https://ii1.pepperfry.com/assets/w23-pf-maestro.jpg"
+            alt=""
+          />
+          <img
+            src="https://ii2.pepperfry.com/assets/w23-pf-american-express.jpg"
+            alt=""
+          />
+          <img src="https://ii3.pepperfry.com/assets/w23-pf-rupay.jpg" alt="" />
+          <img
+            src="https://ii2.pepperfry.com/assets/w23-pf-dinners-club.jpg"
+            alt=""
+          />
+          <img
+            src="https://ii3.pepperfry.com/assets/w23-pf-wallet.jpg"
+            alt=""
+          />
+          <img
+            src="https://ii3.pepperfry.com/assets/w23-pf-net-banking.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+      <div>
+        <h4>Like What You See? Follow us Here</h4>
+        <div>
+          <img
+            src="https://ii1.pepperfry.com/assets/w23-pf-social-insta.png"
+            alt=""
+          />
+          <img
+            src="https://ii1.pepperfry.com/assets/w23-pf-social-fb.png"
+            alt=""
+          />
+          <img
+            src="https://ii2.pepperfry.com/assets/w23-pf-social-pinterest.png"
+            alt=""
+          />
+          <img
+            src="https://ii1.pepperfry.com/assets/w23-pf-social-linkedin.png"
+            alt=""
+          />
+          <img
+            src="https://ii3.pepperfry.com/assets/w23-pf-social-youtube.png"
+            alt=""
+          />
+          <img
+            src="https://ii1.pepperfry.com/assets/w23-pf-social-twitter.png"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+
+    let logo = document.getElementById("logo");
+    logo.addEventListener("click",function(){
+        window.location.href = 'index.html';
+    })
+
+    
+</script>
+</html>
