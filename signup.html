@@ -83,6 +83,27 @@
         #facebook{
             margin-bottom: 40px;
         }
+        #confirmpassword{
+            width: 100%;
+           
+            padding: 10px;
+            margin-bottom: 20px;
+            line-height: 24px;
+            
+        }
+        #confirmpassword::placeholder{
+            font-size: 18px;
+        }
+        .fa-low-vision{
+            width: 100%;
+            position: absolute;
+            left: 160px;
+            top: 15px;
+            cursor: pointer;
+        }
+        #toggle{
+            position: relative;
+        }
     </style>
 </head>
 <body>
@@ -91,15 +112,63 @@
     <form>
         <input type="email" id="email" placeholder="Email">
         <input type="password" id="password" placeholder="Create password">
-        <input type="password" id="password" placeholder="Confirm password">
-
+        <div id="toggle">
+            <input type="password" id="confirmpassword" placeholder="Confirm password"> 
+            <i class="fas fa-low-vision"></i>
+        </div>
         <input type="submit" value="Signup" id="submit">
     </form>
     <p>By continuing, you agree to our <a href="">Terms & Conditions</a></p>
     <p>Or</p>
-    <p>Already have an account? <a href="./signin.html" target="_blank">Sigin</a></p>
-    <button><i class="fab fa-google"></i> Sign in with Google</button>
+    <p>Already have an account? <a href="./signin.html">Sigin</a></p>
+    <button id="google"><i class="fab fa-google"></i> Sign in with Google</button>
     <button id="facebook"><i class="fab fa-facebook-f"></i> Facebook</button>
     </div>
 </body>
+<script>
+    let form = document.querySelector("form");
+    let email = document.getElementById("email");
+    let password  = document.getElementById("password");
+    let confirmpassword = document.getElementById("confirmpassword");
+
+    let SignUpData = JSON.parse(localStorage.getItem("signupdata")) || [];
+
+    form.addEventListener("submit", function(e){
+        e.preventDefault();
+        let data = {
+            email: email.value,
+            password: password.value,
+            confirmpassword: confirmpassword.value,
+        }
+        console.log(password.value)
+        console.log(confirmpassword.value)
+
+        if(password.value == confirmpassword.value){
+            SignUpData.push(data); 
+        }else{
+            alert("Please enter same password")
+        }
+        localStorage.setItem("signupdata",JSON.stringify(SignUpData));
+    })
+
+
+    let visibility = document.querySelector(".fa-low-vision");
+    visibility.addEventListener("click",function(){
+       if(confirmpassword.type === "password"){
+        confirmpassword.type = "text";
+       }else{
+        confirmpassword.type = "password";
+       }
+    })
+
+    let google = document.getElementById("google");
+    let facebook = document.getElementById("facebook");
+    let urlgoogle = "https://accounts.google.com/v3/signin/identifier?dsh=S704804093%3A1680245177553020&continue=https%3A%2F%2Fmyaccount.google.com%3Futm_source%3Daccount-marketing-page%26utm_medium%3Dcreate-account-button&flowName=GlifWebSignIn&flowEntry=AddSession"
+    google.addEventListener("click",function(){
+        window.open(urlgoogle, '_blank');
+    })
+    facebook.addEventListener("click",function(){
+        window.open("https://www.facebook.com/login/", '_blank');
+    })
+</script>
 </html>
