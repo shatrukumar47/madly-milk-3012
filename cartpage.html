@@ -1,72 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css"
+    />
     <title>Add to Cart</title>
-      <style>
-      *{
-      box-sizing: border-box;
+    <style>
+      * {
+        box-sizing: border-box;
       }
-      body{
-          margin: 0px;
-          padding: 0px;
-          font-family: Poppins, sans-serif;
+      body {
+        margin: 0px;
+        padding: 0px;
+        font-family: Poppins, sans-serif;
       }
-      .navbar{
-          width: 100%;
-          display: flex;
-          justify-content: space-between;
-          box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-          background: #28279C;
+      .navbar {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+          rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        background: #28279c;
+        align-items: center;
       }
-      .navbar>img{
-          width: 200px;
+      .navbar > img {
+        width: 200px;
+        cursor: pointer;
       }
-      .navbar>h1{
+      .navbar > h1 {
         color: white;
         margin-right: 30px;
       }
+      .icons {
+        width: 300px;
+        display: flex;
+        justify-content: space-between;
+        margin-right: 30px;
+      }
+      .icons i {
+        font-size: 33px;
+        color: white;
+        cursor: pointer;
+      }
 
-    /* <---------------------------Body Styling -------------------------------------------------> */
+      /* <---------------------------Body Styling -------------------------------------------------> */
 
-      #total{
+      #total {
         text-align: center;
         color: white;
         font-size: 40px;
-        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
         height: 100px;
         display: flex;
         align-items: center;
         justify-content: center;
-        background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+        background-image: linear-gradient(
+          to right,
+          rgba(255, 0, 0, 0),
+          rgba(255, 0, 0, 1)
+        );
+      }
+      #items {
+        width: 70%;
+        margin: auto;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+      #container {
+        width: 80%;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 30px;
+        margin-bottom: 50px;
+        padding: 10px;
+        gap: 20px;
+      }
+      #container > div img {
+        width: 400px;
+      }
+      #container > div > h4 {
+        color: #9d6a37;
+      }
+      #container p {
+        color: #6d726d;
+      }
+      #card {
+        width: 55%;
+        display: flex;
+        justify-content: space-around;
+        border: 1px solid #6d726d;
+        margin-bottom: 10px;
+      }
+      #card > div:last-child {
+        padding-left: 10px;
+      }
+      #card > div:last-child button {
+        width: 50px;
+        background: #fc642b;
+        border: none;
+        color: white;
+        padding: 10px;
+        font-size: 18px;
+        border-radius: 10px;
+        cursor: pointer;
+        margin: 40px;
+      }
+      #card h4 {
+        color: #9d6a37;
+      }
+      #card > div:last-child span {
+        font-size: 25px;
+        font-weight: 700;
+        color: #9d6a37;
+      }
+      #card > div:last-child h3 {
+        padding: 10px;
+        text-align: center;
+        color: #9d6a37;
+      }
+      .buttondiv {
+        width: 100%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: baseline;
+        padding: 10px;
+      }
+      img{
+        cursor: pointer;
+      }
+      .buttondiv button {
+        width: 200px;
+        display: block;
+        margin: auto;
+        background: #fc642b;
+        border: none;
+        color: white;
+        padding: 10px;
+        font-size: 18px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+      .buttondiv button:hover {
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+          rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+      }
+      #placeOrder {
+        width: 250px;
+        display: block;
+        margin: auto;
+        margin-top: 20px;
+        padding: 15px;
+        background: #28279c;
+        color: white;
+        font-size: 20px;
+        font-weight: 500;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        margin-bottom: 40px;
+      }
+      #placeOrder:hover {
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+          rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
       }
 
+      /* <-------------------------------------------------Footer Css --------------------------------------------> */
 
-
-
-
-
-
-
-
-
-   /* <-------------------------------------------------Footer Css --------------------------------------------> */
-
-      .footer{
+      .footer {
         width: 100%;
-        background: #F5F5F5;
+        background: #f5f5f5;
         padding-top: 20px;
         padding-bottom: 30px;
-        
       }
       .payment-partners {
         width: 90%;
         margin: auto;
         display: grid;
         grid-template-columns: 70% 30%;
-        gap: 20px; 
+        gap: 20px;
       }
       .payment-partners > div > div > img {
         width: 76px;
@@ -74,97 +192,257 @@
       .payment-partners > div:last-child > div > img {
         width: 46px;
       }
-
     </style>
-</head>
-<body>
-   <div class="navbar">
-    <img src="./HummingBird.png" alt="" id="logo">
-    <h1>Cart 🛒</h1>
-   </div>
-
-   <!-- <-----------------------------------------Product-------------------------------------------------------------> 
-   <h1 id="total"> Total</h1>
-   <div class="container">
-
-   </div>
-
-
-
-   <!-- <--------------------------------Footer------------------------------------------------------------------->
-
-   <div class="footer">
-    <div class="payment-partners">
-      <div>
-        <h4>We Accept</h4>
-        <div>
-          <img src="https://ii2.pepperfry.com/assets/w23-pf-visa.jpg" alt="" />
-          <img
-            src="https://ii3.pepperfry.com/assets/w23-pf-master-card.jpg"
-            alt=""
-          />
-          <img
-            src="https://ii1.pepperfry.com/assets/w23-pf-maestro.jpg"
-            alt=""
-          />
-          <img
-            src="https://ii2.pepperfry.com/assets/w23-pf-american-express.jpg"
-            alt=""
-          />
-          <img src="https://ii3.pepperfry.com/assets/w23-pf-rupay.jpg" alt="" />
-          <img
-            src="https://ii2.pepperfry.com/assets/w23-pf-dinners-club.jpg"
-            alt=""
-          />
-          <img
-            src="https://ii3.pepperfry.com/assets/w23-pf-wallet.jpg"
-            alt=""
-          />
-          <img
-            src="https://ii3.pepperfry.com/assets/w23-pf-net-banking.jpg"
-            alt=""
-          />
-        </div>
+  </head>
+  <body>
+    <div class="navbar">
+      <img src="./HummingBird.png" alt="" id="logo" />
+      <h1>Cart 🛒</h1>
+      <div class="icons">
+        <i class="fas fa-user userlogin"></i>
+        <i class="fas fa-bell"></i>
+        <i class="fas fa-heart wishlist"></i>
+        <i class="fas fa-shopping-cart cart"></i>
       </div>
-      <div>
-        <h4>Like What You See? Follow us Here</h4>
+    </div>
+
+    <!-- <-----------------------------------------Product------------------------------------------------------------->
+    <h1 id="total">Total</h1>
+    <h3 id="items"></h3>
+    <div id="container"></div>
+    <button id="placeOrder">Place Your Order</button>
+
+    <!-- <--------------------------------Footer------------------------------------------------------------------->
+
+    <div class="footer">
+      <div class="payment-partners">
         <div>
-          <img
-            src="https://ii1.pepperfry.com/assets/w23-pf-social-insta.png"
-            alt=""
-          />
-          <img
-            src="https://ii1.pepperfry.com/assets/w23-pf-social-fb.png"
-            alt=""
-          />
-          <img
-            src="https://ii2.pepperfry.com/assets/w23-pf-social-pinterest.png"
-            alt=""
-          />
-          <img
-            src="https://ii1.pepperfry.com/assets/w23-pf-social-linkedin.png"
-            alt=""
-          />
-          <img
-            src="https://ii3.pepperfry.com/assets/w23-pf-social-youtube.png"
-            alt=""
-          />
-          <img
-            src="https://ii1.pepperfry.com/assets/w23-pf-social-twitter.png"
-            alt=""
-          />
+          <h4>We Accept</h4>
+          <div>
+            <img
+              src="https://ii2.pepperfry.com/assets/w23-pf-visa.jpg"
+              alt=""
+            />
+            <img
+              src="https://ii3.pepperfry.com/assets/w23-pf-master-card.jpg"
+              alt=""
+            />
+            <img
+              src="https://ii1.pepperfry.com/assets/w23-pf-maestro.jpg"
+              alt=""
+            />
+            <img
+              src="https://ii2.pepperfry.com/assets/w23-pf-american-express.jpg"
+              alt=""
+            />
+            <img
+              src="https://ii3.pepperfry.com/assets/w23-pf-rupay.jpg"
+              alt=""
+            />
+            <img
+              src="https://ii2.pepperfry.com/assets/w23-pf-dinners-club.jpg"
+              alt=""
+            />
+            <img
+              src="https://ii3.pepperfry.com/assets/w23-pf-wallet.jpg"
+              alt=""
+            />
+            <img
+              src="https://ii3.pepperfry.com/assets/w23-pf-net-banking.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div>
+          <h4>Like What You See? Follow us Here</h4>
+          <div>
+            <img
+              src="https://ii1.pepperfry.com/assets/w23-pf-social-insta.png"
+              alt=""
+            />
+            <img
+              src="https://ii1.pepperfry.com/assets/w23-pf-social-fb.png"
+              alt=""
+            />
+            <img
+              src="https://ii2.pepperfry.com/assets/w23-pf-social-pinterest.png"
+              alt=""
+            />
+            <img
+              src="https://ii1.pepperfry.com/assets/w23-pf-social-linkedin.png"
+              alt=""
+            />
+            <img
+              src="https://ii3.pepperfry.com/assets/w23-pf-social-youtube.png"
+              alt=""
+            />
+            <img
+              src="https://ii1.pepperfry.com/assets/w23-pf-social-twitter.png"
+              alt=""
+            />
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</body>
-<script>
-
+  </body>
+  <script>
     let logo = document.getElementById("logo");
-    logo.addEventListener("click",function(){
-        window.location.href = 'index.html';
-    })
+    logo.addEventListener("click", function () {
+      window.location.href = "index.html";
+    });
 
-    
-</script>
+    let usericon = document.querySelector(".userlogin");
+    usericon.addEventListener("click", function () {
+      window.open("signup.html", "_blank");
+    });
+
+    let wishlistIcon = document.querySelector(".wishlist");
+    wishlistIcon.addEventListener("click", function () {
+      window.location.href = "wishlist.html";
+    });
+
+    let cartIcon = document.querySelector(".cart");
+    cartIcon.addEventListener("click", function () {
+      window.location.href = "cartpage.html";
+    });
+
+    let placeOrder = document.getElementById("placeOrder");
+    placeOrder.addEventListener("click", function () {
+      window.location.href = "payment.html";
+    });
+
+    let container = document.getElementById("container");
+    let CartData = JSON.parse(localStorage.getItem("cart-data")) || [];
+    let WishlistData = JSON.parse(localStorage.getItem("wishlist")) || [];
+    Display(CartData);
+
+    function Display(data) {
+      container.innerHTML = null;
+      data.forEach(function (element) {
+        let card = document.createElement("div");
+        card.setAttribute("id", "card");
+        let image = document.createElement("img");
+        let name = document.createElement("h4");
+        let price = document.createElement("p");
+        let rating = document.createElement("p");
+        let description = document.createElement("p");
+        let div = document.createElement("div");
+        let div1 = document.createElement("div");
+        div.setAttribute("class", "buttondiv");
+        let RemoveBtn = document.createElement("button");
+        let WishlistBtn = document.createElement("button");
+        let IncrementBtn = document.createElement("button");
+        let Quantity = document.createElement("span");
+        let DecrementBtn = document.createElement("button");
+        let itemPrice = document.createElement("h3");
+
+        image.setAttribute("src", element.image);
+        name.innerText = element.title;
+        price.innerText = `₹${element.price}`;
+        rating.innerText = element.rating;
+        description.innerText = element.description;
+        RemoveBtn.innerText = "Remove";
+        WishlistBtn.innerText = "Move To Wishlist";
+        IncrementBtn.innerText = "+";
+        Quantity.innerText = element.quantity;
+        DecrementBtn.innerText = "-";
+        itemPrice.innerText = `Item Net Price = ₹${
+          element.price * element.quantity
+        }`;
+
+        RemoveBtn.addEventListener("click", function () {
+          CartData = CartData.filter(function (ele) {
+            if (element.id !== ele.id) {
+              return true;
+            } else {
+              return false;
+            }
+          });
+          localStorage.setItem("cart-data", JSON.stringify(CartData));
+          Display(CartData);
+        });
+
+        //view product
+
+        image.addEventListener("click", function () {
+          const data = JSON.parse(localStorage.getItem("product-view"));
+          if (data.length == 0) {
+            data.push(element);
+            localStorage.setItem("product-view", JSON.stringify(data));
+          } else {
+            data.pop();
+            localStorage.setItem("product-view", JSON.stringify(data));
+            data.push(element);
+            localStorage.setItem("product-view", JSON.stringify(data));
+          }
+          window.location.href = "productviewpage.html";
+        });
+
+        WishlistBtn.addEventListener("click", function () {
+          let flag = checkAvailability(element);
+          if (flag == true) {
+            alert("Already Present in the Wishlist 🎉");
+          } else {
+            WishlistData.push(element);
+            localStorage.setItem("wishlist", JSON.stringify(WishlistData));
+            alert("Added in the Wishlist 🤍");
+
+            CartData = CartData.filter(function (ele) {
+              if (ele.id == element.id) {
+                return false;
+              } else {
+                return true;
+              }
+            });
+            Display(CartData);
+          }
+        });
+
+        IncrementBtn.addEventListener("click", function () {
+          element.quantity++;
+          localStorage.setItem("cart-data", JSON.stringify(CartData));
+          Display(CartData);
+        });
+        DecrementBtn.addEventListener("click", function () {
+          if (element.quantity > 1) {
+            element.quantity--;
+            localStorage.setItem("cart-data", JSON.stringify(CartData));
+            Display(CartData);
+          }
+        });
+
+        div.append(image, RemoveBtn, WishlistBtn);
+        div1.append(
+          name,
+          price,
+          rating,
+          description,
+          IncrementBtn,
+          Quantity,
+          DecrementBtn,
+          itemPrice
+        );
+        card.append(div, div1);
+        container.append(card);
+      });
+      let items = document.getElementById("items");
+      items.innerText = `Your Cart (${CartData.length} Items)`;
+
+      let total = document.getElementById("total");
+      let sum = 0;
+      CartData.forEach(function (element) {
+        sum += element.price * element.quantity;
+      });
+      total.innerText = `Total Amount = ₹${sum}`;
+    }
+
+    function checkAvailability(ele) {
+      for (let i = 0; i < WishlistData.length; i++) {
+        if (ele.id == WishlistData[i].id) {
+          return true;
+        }
+      }
+      return false;
+    }
+  </script>
 </html>

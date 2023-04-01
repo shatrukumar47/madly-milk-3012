@@ -10,12 +10,12 @@ usericon.addEventListener("click",function(){
 
 let wishlistIcon = document.querySelector(".wishlist");
 wishlistIcon.addEventListener("click",function(){
-    window.open('wishlist.html', '_blank');
+    window.location.href = 'wishlist.html';
 })
 
 let cartIcon = document.querySelector(".cart");
 cartIcon.addEventListener("click",function(){
-    window.open('cartpage.html', '_blank');
+    window.location.href = 'cartpage.html';
 })
 
 
@@ -42,9 +42,20 @@ function MapData(data){
             image: element.images[0], 
             quantity:1, 
             rating: '⭐⭐⭐⭐(15 Sold)',  
+            disclaimer: "Accessories shown in the image are only for representation and are not part of the product Depending on your screen settings and resolution on your device there may be a slight variance in fabric color and wood polish of the image and actual product. Wood grains will vary from product to product in case of solid wood furniture. Furniture having intricate hand-painted details are individual unique pieces and may have slight distinctions and variance between the picture and actual product.The Primary material is the main material used to manufacture the product and in addition to the primary material there might also be other type of materials used in the manufacturing of the product",
+            productDetails : [
+                {
+                    brand: "Woodsworth from Pepperfry",
+                    assembly : "Carpenter Assembly",
+                    collections : "Hugo",
+                    dimensions : "Sofa : H 33 x W 79 x D 34; Lounger : H 33 x W 30 x D 58; Seating Height - 16; Seating Depth : 21.5 (all dimensions in inches)" ,
+                    type: "Living Room",
+                    warranty: "36 Months' Warranty"
+                }
+            ]
         }
     })
-    console.log(a);
+    // console.log(a);
     Display(a)
     localStorage.setItem("Product-data",JSON.stringify(a));
 }
@@ -57,6 +68,8 @@ let CartData = JSON.parse(localStorage.getItem("cart-data")) || [];
 let container = document.getElementById("container");
 function Display(data){
     container.innerHTML = null;
+    const productViewData =JSON.parse(localStorage.getItem('product-view')) || [];
+    localStorage.setItem("product-view", JSON.stringify(productViewData));
     data.forEach(function(element){
         let card = document.createElement("div");
         let image = document.createElement("img");
@@ -74,6 +87,25 @@ function Display(data){
         price.innerText = `₹${element.price}`;
         rating.innerText = element.rating;
         description.innerText = element.description;
+
+        // brand.innerText = element.productDetails[0].brand
+
+        //
+        image.addEventListener("click",function(){
+            const data = JSON.parse(localStorage.getItem("product-view"));
+            if(data.length == 0){
+                data.push(element);
+                localStorage.setItem("product-view", JSON.stringify(data));
+               
+            }else{
+                data.pop()
+                localStorage.setItem("product-view", JSON.stringify(data));
+                data.push(element);
+                localStorage.setItem("product-view", JSON.stringify(data));
+            }
+            window.open('productviewpage.html', '_blank');
+        })
+
         wishlistBtn.innerText = "Wishlist 🤍";
         addToCartBtn.innerText = "Add To Cart";
 

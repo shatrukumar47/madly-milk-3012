@@ -1,12 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add to Cart</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proceed to Pay</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0px;
+        padding: 0px;
+        font-family: Poppins, sans-serif;
+      }
+      #container {
+        width: 45%;
+        margin: 30px;
+        padding: 20px;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+          rgba(0, 0, 0, 0.22) 0px 15px 12px;
+        border-radius: 20px;
+        padding-bottom: 50px;
+        background: #eceff1;
+      }
+      #container > h1 {
+        color: #28279c;
+      }
+      #container h3 {
+        color: #9d6a37;
+      }
+      #container img {
+        width: 100px;
+      }
+      form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      form > div {
+        margin: 20px;
+        width: 100%;
+        margin-left: 0px;
+        display: flex;
+      }
+      label {
+        color: #6d726d;
+        margin-bottom: 5px;
+      }
+      input {
+        padding: 5px;
+        margin-right: 10px;
+      }
+      input::placeholder {
+        color: #9d6a37;
+      }
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        margin: 0;
+      }
+      #submit {
+        width: 250px;
+        margin: auto;
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #00e676;
+        color: white;
+        font-size: 20px;
+        font-weight: 500;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+      #submit:hover {
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+          rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1>Select a Payment Method</h1>
+      <div>
+        <h3>We Accept</h3>
+        <div>
+          <img src="https://ii2.pepperfry.com/assets/w23-pf-visa.jpg" alt="" />
+          <img
+            src="https://ii3.pepperfry.com/assets/w23-pf-master-card.jpg"
+            alt=""
+          />
+          <img
+            src="https://ii1.pepperfry.com/assets/w23-pf-maestro.jpg"
+            alt=""
+          />
+
+          <img src="https://ii3.pepperfry.com/assets/w23-pf-rupay.jpg" alt="" />
+
+          <img
+            src="https://ii3.pepperfry.com/assets/w23-pf-wallet.jpg"
+            alt=""
+          />
+          <img
+            src="https://ii3.pepperfry.com/assets/w23-pf-net-banking.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+      <h3>Card Details</h3>
+      <form>
+        <label for="">Card Number</label>
+        <input
+          type="number"
+          id="cardnumber"
+          onKeyPress="if(this.value.length==12) return false;"
+          placeholder="Card Number"
+        />
+        <div>
+          <label for="">Expiry Month</label>
+          <input
+            type="number"
+            id="expirymonth"
+            onKeyPress="if(this.value.length==2) return false;"
+            placeholder="MM"
+          />
+          <label for="">Expiry Year</label>
+          <input type="number" id="expiryyear" onKeyPress="if(this.value.length==2) return false;" placeholder="YY" />
+          <label for="">Security Code</label>
+          <input type="number" id="cvv" onKeyPress="if(this.value.length==3) return false;" placeholder="CVV" />
+        </div>
+        <input type="submit" value="PROCEED TO PAY 🔒" id="submit" />
+      </form>
+    </div>
+  </body>
+  <script>
+    let form = document.querySelector("form");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("Your Order has been Placed 🥳");
+    });
+  </script>
 </html>

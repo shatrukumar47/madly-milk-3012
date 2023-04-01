@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css"
+    />
     <title>Wishlist</title>
     <style>
       * {
@@ -21,13 +25,26 @@
         box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
           rgba(0, 0, 0, 0.23) 0px 6px 6px;
         background: #28279c;
+        align-items: center;
       }
       img[alt="logo"] {
         width: 200px;
+        cursor: pointer;
       }
       h1 {
         color: white;
         margin-right: 30px;
+      }
+      .icons{
+          width: 300px;
+          display: flex;
+          justify-content: space-between;
+          margin-right: 30px;
+      }
+      .icons i{
+          font-size: 33px;
+          color: white;
+          cursor: pointer;
       }
       /* <-----------------------------------------Product List Css----------------------------------------> */
 
@@ -62,6 +79,9 @@
           margin-bottom: 20px;
           margin-top: 30px;
       }
+      img{
+        cursor: pointer;
+      }
       .buttondiv button{
           background: #FC642B;
           border: none;
@@ -69,6 +89,7 @@
           padding: 10px;
           font-size: 18px;
           border-radius: 10px;
+          cursor: pointer;
       }
       .buttondiv button:hover{
           box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
@@ -102,6 +123,12 @@
     <div class="navbar">
       <img src="./HummingBird.png" alt="logo" id="logo"/>
       <h1>Wish 🤍 List</h1>
+      <div class="icons">
+        <i class="fas fa-user userlogin"></i>
+        <i class="fas fa-bell"></i>
+        <i class="fas fa-heart wishlist"></i>
+        <i class="fas fa-shopping-cart cart"></i>
+      </div>
     </div>
 
     <!-- <-----------------------------------------Product------------------------------------------------------------->
@@ -184,6 +211,21 @@
         window.location.href = 'index.html';
     })
 
+    let usericon = document.querySelector(".userlogin");
+    usericon.addEventListener("click",function(){
+        window.open('signup.html', '_blank');
+    })
+
+    let wishlistIcon = document.querySelector(".wishlist");
+    wishlistIcon.addEventListener("click",function(){
+        window.location.href = 'wishlist.html';
+    })
+
+    let cartIcon = document.querySelector(".cart");
+    cartIcon.addEventListener("click",function(){
+        window.location.href = 'cartpage.html';
+    })
+
     let WishlistData = JSON.parse(localStorage.getItem("wishlist"));
     let CartData = JSON.parse(localStorage.getItem("cart-data")) || [];
 
@@ -235,6 +277,21 @@
               }
             
           })
+          //view product
+          image.addEventListener("click",function(){
+            const data = JSON.parse(localStorage.getItem("product-view"));
+            if(data.length == 0){
+                data.push(element);
+                localStorage.setItem("product-view", JSON.stringify(data));
+               
+            }else{
+                data.pop()
+                localStorage.setItem("product-view", JSON.stringify(data));
+                data.push(element);
+                localStorage.setItem("product-view", JSON.stringify(data));
+            }
+            window.location.href = "productviewpage.html"
+        })
 
           div.append(RemoveBtn,addToCartBtn)
           card.append(image,name,price,rating,description,div)
