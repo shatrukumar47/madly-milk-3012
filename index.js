@@ -16,12 +16,13 @@ signupimage.addEventListener("click",function(){
 
 let wishlistIcon = document.querySelector(".wishlist");
 wishlistIcon.addEventListener("click",function(){
-    window.open('wishlist.html', '_blank');
+    window.location.href = 'wishlist.html';
 })
 
 let cartIcon = document.querySelector(".cart");
 cartIcon.addEventListener("click",function(){
-    window.open('cartpage.html', '_blank');
+    window.location.href = 'cartpage.html';
+
 })
 
 let saleimg = document.getElementById("sale");

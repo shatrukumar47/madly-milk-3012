@@ -42,10 +42,13 @@ i{
 }
 #search-bar{
     position: relative;
-    
 }
+#search-bar:hover input[placeholder="Search..."]{
+    width: 700px;
+}/*add new*/
+
 input[placeholder="Search..."]{
-    width: 100%;
+    width: 300px; /*add new*/
     font-size: 30px;
     line-height: 24px;
     border: none;
@@ -53,6 +56,8 @@ input[placeholder="Search..."]{
     border-radius: 10px;
     padding: 10px;
     padding-left: 20px; 
+    transition: 2s; /*add new*/
+
 }
 input[placeholder="Search..."]::placeholder{
     color: #28279C;
@@ -220,6 +225,7 @@ input[placeholder="Search..."]::placeholder{
     padding: 10px;
     font-size: 18px;
     border-radius: 10px;
+    cursor: pointer;
 }
 .buttondiv button:hover{
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
