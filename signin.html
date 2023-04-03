@@ -1,153 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css"
     />
     <title>Signin</title>
     <style>
-        *{
-            box-sizing: border-box;
-        }
-        body{
-            margin: 0px;
-            padding: 0px;
-            font-family: Manrope, sans-serif;
-        }
-        .container{
-            width: 418px;
-            margin: 100px auto;
-            text-align: center;
-            padding: 20px;
-            box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-            border-radius: 10px;
-        }
-        img{
-            width: 100%;
-        }
-        h1{
-            color: #9D6A37;
-        }
-        form{
-            width: 100%;
-            margin: auto;
-            display: flex;
-            flex-direction: column;
-        }
-        form>input{
-            padding: 10px;
-            margin-bottom: 20px;
-            line-height: 24px;
-        }
-        form>input::placeholder{
-            font-size: 18px;
-        }
-        #submit{
-            background: #FC642B;
-            border: none;
-            color: white;
-            padding: 10px;
-            font-weight: 700;
-            font-size: 18px;
-        }
-        #submit:hover{
-            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-        }
-        p{
-            color:  #6d726d;
-        }
-        p>a{
-            color:#FC642B;
-            text-decoration: none;
-        }
-        button{
-            width: 100%;
-            margin: auto;
-            display: block;
-            margin-bottom: 20px;
-            padding: 10px;
-            font-size: 18px;
-            background: white;
-            color:  #393b39;
-            font-weight: bold;
-            border: 1px solid grey;
-        }
-        button:hover{
-            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-            color: #FC642B;
-        }
-        #facebook{
-            margin-bottom: 40px;
-        }
-
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0px;
+        padding: 0px;
+        font-family: Manrope, sans-serif;
+      }
+      .container {
+        width: 418px;
+        margin: 100px auto;
+        text-align: center;
+        padding: 20px;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+          rgba(0, 0, 0, 0.22) 0px 15px 12px;
+        border-radius: 10px;
+      }
+      img {
+        width: 100%;
+      }
+      h1 {
+        color: #9d6a37;
+      }
+      form {
+        width: 100%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+      }
+      form > input {
+        padding: 10px;
+        margin-bottom: 20px;
+        line-height: 24px;
+      }
+      form > input::placeholder {
+        font-size: 18px;
+      }
+      #submit {
+        background: #fc642b;
+        border: none;
+        color: white;
+        padding: 10px;
+        font-weight: 700;
+        font-size: 18px;
+      }
+      #submit:hover {
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+          rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+      }
+      p {
+        color: #6d726d;
+      }
+      p > a {
+        color: #fc642b;
+        text-decoration: none;
+      }
+      button {
+        width: 100%;
+        margin: auto;
+        display: block;
+        margin-bottom: 20px;
+        padding: 10px;
+        font-size: 18px;
+        background: white;
+        color: #393b39;
+        font-weight: bold;
+        border: 1px solid grey;
+      }
+      button:hover {
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+          rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        color: #fc642b;
+      }
+      #facebook {
+        margin-bottom: 40px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <img src="https://ii1.pepperfry.com/assets/57a925f0-f941-4f6d-b6af-8e67bb7de58b.jpg" alt="">
-        <h1>Sign Up Or Log In</h1>
-    <form>
-        <input type="email" id="email" placeholder="Enter Email Id">
-        <input type="password" id="password" placeholder="Password">
-        <input type="submit" value="Login" id="submit">
-    </form>
-    <p>By continuing, you agree to our <a href="">Terms & Conditions</a></p>
-    <p>Or</p>
-    <p><a href="./signup.html">Signup</a> using</p>
-    <button id="google"><i class="fab fa-google"></i> Sign in with Google</button>
-    <button id="facebook"><i class="fab fa-facebook-f"></i> Facebook</button>
+      <img
+        src="https://ii1.pepperfry.com/assets/57a925f0-f941-4f6d-b6af-8e67bb7de58b.jpg"
+        alt=""
+      />
+      <h1>Sign Up Or Log In</h1>
+      <form>
+        <input type="email" id="email" placeholder="Enter Email Id" />
+        <input type="password" id="password" placeholder="Password" />
+        <input type="submit" value="Login" id="submit" />
+      </form>
+      <p>By continuing, you agree to our <a href="">Terms & Conditions</a></p>
+      <p>Or</p>
+      <p><a href="./signup.html">Signup</a> using</p>
+      <button id="google">
+        <i class="fab fa-google"></i> Sign in with Google
+      </button>
+      <button id="facebook"><i class="fab fa-facebook-f"></i> Facebook</button>
     </div>
-</body>
-<script>
-
+  </body>
+  <script>
     let SignUpData = JSON.parse(localStorage.getItem("signupdata"));
-    console.log(SignUpData)
+    console.log(SignUpData);
 
     let form = document.querySelector("form");
     let email = document.getElementById("email");
     let password = document.getElementById("password");
 
-    form.addEventListener("submit",function(e){
-        e.preventDefault();
-        let flag = false;
-        SignUpData.forEach(function(element){
-            if(email.value == element.email && password.value == element.password){
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      
+      SignUpData.forEach(function (element) {
+        if(email.value == element.email && password.value == element.password){
                 alert("Sign in successful");
-                flag = true;
-            }else{
-                alert("Please enter valid input")
-            }
-            if(flag){
                 setTimeout(() => {
-                    window.open('index.html');
+                  window.location.href = 'index.html';
                 }, 500);
-                    
             }
-        })
-       
-    })
-
-
-
-
-
-
-
-
+      });
+    });
 
     let google = document.getElementById("google");
     let facebook = document.getElementById("facebook");
-    let urlgoogle = "https://accounts.google.com/v3/signin/identifier?dsh=S704804093%3A1680245177553020&continue=https%3A%2F%2Fmyaccount.google.com%3Futm_source%3Daccount-marketing-page%26utm_medium%3Dcreate-account-button&flowName=GlifWebSignIn&flowEntry=AddSession"
-    google.addEventListener("click",function(){
-        window.open(urlgoogle, '_blank');
-    })
-    facebook.addEventListener("click",function(){
-        window.open("https://www.facebook.com/login/", '_blank');
-    })
-
-</script>
+    let urlgoogle =
+      "https://accounts.google.com/v3/signin/identifier?dsh=S704804093%3A1680245177553020&continue=https%3A%2F%2Fmyaccount.google.com%3Futm_source%3Daccount-marketing-page%26utm_medium%3Dcreate-account-button&flowName=GlifWebSignIn&flowEntry=AddSession";
+    google.addEventListener("click", function () {
+      window.open(urlgoogle, "_blank");
+    });
+    facebook.addEventListener("click", function () {
+      window.open("https://www.facebook.com/login/", "_blank");
+    });
+  </script>
 </html>
