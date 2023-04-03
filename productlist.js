@@ -19,16 +19,249 @@ cartIcon.addEventListener("click",function(){
 })
 
 
-// Fetching API
-let url = "https://api.escuelajs.co/api/v1/products/?categoryId=3";
 
-fetch(url).then(function(res){
-    return res.json();
-}).then(function(data){
-    MapData(data);
-}).catch(function(error){
-    console.log(error);
-})
+
+const apiData = 
+            [
+                {
+                    "id": 3,
+                    "title": "Somerville Fabric 2 Seater Sofa in Dark Olive Coloura",
+                    "price": 138,
+                    "description": "New range of formal chairs are designed keeping you in mind. With fits and styling that will make you stand apart",
+                    "images":"https://ii3.pepperfry.com/media/catalog/product/a/m/494x544/amelia-fabric-1-seater-sofa-in-ash-grey-colour-amelia-fabric-1-seater-sofa-in-ash-grey-colour-kjx8ia.jpg",
+                },
+                {
+                    "id": 19,
+                    "title": "Fidel Velvet 2 Seater Sofa In Teal Blue Colour",
+                    "price": 316,
+                    "description": "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
+                    "images": "https://ii3.pepperfry.com/media/catalog/product/m/i/494x544/miranda-velvet-1-seater-sofa-in-dark-green-colour-by-woodsworth-miranda-velvet-1-seater-sofa-in-dark-qv3qrw.jpg", 
+                },
+                {
+                    "id": 22,
+                    "title": "Garnet Fabric 1 Seater Sofa In Titanium Grey Colour",
+                    "price": 137,
+                    "description": "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
+                    "images": "https://ii3.pepperfry.com/media/catalog/product/s/o/494x544/somerville-2-seater-sofa-in-dark-olive-colour-by--home-somerville-2-seater-sofa-in-dark-olive-colour-bzrgpy.jpg",
+                },
+                {
+                    "id": 25,
+                    "title": "Gustowe Large Writing Table in White Finish",
+                    "price": 771,
+                    "description": "The Footsofa Is Good For Training And Recreational Purposes",
+                    "images": "https://ii2.pepperfry.com/media/catalog/product/g/u/494x544/gustowe-study-table-in-white-colour-by-bluewud-gustowe-study-table-in-white-colour-by-bluewud-jppmjd.jpg",
+                },
+                {
+                    "id": 26,
+                    "title": "Nakamura Hutch Desk in Wenge Finish",
+                    "price": 197,
+                    "description": "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+                    "images": "https://ii1.pepperfry.com/media/catalog/product/n/a/494x544/nakamura-study-table-with-cabinet-in-wenge-finish-by-mintwud-nakamura-study-table-with-cabinet-in-we-gkuozn.jpg",
+                },
+                {
+                    "id": 29,
+                    "title": "Kosmo Harmony Coffee Table in Natural Teak Finish",
+                    "price": 290,
+                    "description": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+                    "images": "https://ii2.pepperfry.com/media/catalog/product/k/o/494x544/kosmo-harmony-coffee-table-in-natural-teak-finish-by-spacewood-kosmo-harmony-coffee-table-in-natural-qqbomr.jpg",
+                },
+                
+                {
+                    "id": 113,
+                    "title": "Simson Plastic Iconic Chair in Black Colour",
+                    "price": 17,
+                    "description": "The Footsofa Is Good For Training And Recreational Purposes",
+                    "images": "https://ii1.pepperfry.com/media/catalog/product/s/i/494x544/simson-study-chair-in-black-colour-by-trevi-furniture-simson-study-chair-in-black-colour-by-trevi-fu-4kxvbg.jpg",
+                },
+                {
+                    "id": 119,
+                    "title": "William Sheesham Wood Arm Chair In Provincial Teak Finish",
+                    "price": 767,
+                    "description": "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
+                    "images":"https://ii3.pepperfry.com/media/catalog/product/w/i/494x544/william-solid-wood-armchair-in-provincial-teak-finish-by-amberville-william-solid-wood-armchair-in-p-8neir8.jpg",
+                },
+                {
+                    "id": 120,
+                    "title": "Aesthetic Fabric Iconic Chair in Multi Colour",
+                    "price": 847,
+                    "description": "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
+                    "images": 'https://ii3.pepperfry.com/media/catalog/product/a/e/494x544/aesthetic-iconic-chair-in-multicolour-by-pansy-furniture-aesthetic-iconic-chair-in-multicolour-by-pa-c89grf.jpg',
+                },
+                {
+                    "id": 123,
+                    "title": "Teak Wood Kutustha Large Mandir With Storage",
+                    "price": 100,
+                    "description": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+                    "images": "https://ii1.pepperfry.com/media/catalog/product/t/e/494x544/teak-wood-mandir-in-golden-by-dzyn-furnitures-teak-wood-mandir-in-golden-by-dzyn-furnitures-h3z3xu.jpg",
+                },
+                {
+                    "id": 128,
+                    "title": "Teak Wood Antarusya Golden Mandir With Storage",
+                    "price": 21,
+                    "description": "The Footsofa Is Good For Training And Recreational Purposes",
+                    "images": "https://ii2.pepperfry.com/media/catalog/product/g/o/494x544/gold-teak-wood-pooja-mandir-without-door-by-dzyn-furnitures-gold-teak-wood-pooja-mandir-without-door-bvprzo.jpg",
+                },
+                {
+                    "id": 3,
+                    "title": "Somerville Fabric 2 Seater Sofa in Dark Olive Coloura",
+                    "price": 138,
+                    "description": "New range of formal chairs are designed keeping you in mind. With fits and styling that will make you stand apart",
+                    "images":"https://ii3.pepperfry.com/media/catalog/product/a/m/494x544/amelia-fabric-1-seater-sofa-in-ash-grey-colour-amelia-fabric-1-seater-sofa-in-ash-grey-colour-kjx8ia.jpg",
+                },
+                {
+                    "id": 19,
+                    "title": "Fidel Velvet 2 Seater Sofa In Teal Blue Colour",
+                    "price": 316,
+                    "description": "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
+                    "images": "https://ii3.pepperfry.com/media/catalog/product/m/i/494x544/miranda-velvet-1-seater-sofa-in-dark-green-colour-by-woodsworth-miranda-velvet-1-seater-sofa-in-dark-qv3qrw.jpg", 
+                },
+                {
+                    "id": 22,
+                    "title": "Garnet Fabric 1 Seater Sofa In Titanium Grey Colour",
+                    "price": 137,
+                    "description": "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
+                    "images": "https://ii3.pepperfry.com/media/catalog/product/s/o/494x544/somerville-2-seater-sofa-in-dark-olive-colour-by--home-somerville-2-seater-sofa-in-dark-olive-colour-bzrgpy.jpg",
+                },
+                {
+                    "id": 25,
+                    "title": "Gustowe Large Writing Table in White Finish",
+                    "price": 771,
+                    "description": "The Footsofa Is Good For Training And Recreational Purposes",
+                    "images": "https://ii2.pepperfry.com/media/catalog/product/g/u/494x544/gustowe-study-table-in-white-colour-by-bluewud-gustowe-study-table-in-white-colour-by-bluewud-jppmjd.jpg",
+                },
+                {
+                    "id": 26,
+                    "title": "Nakamura Hutch Desk in Wenge Finish",
+                    "price": 197,
+                    "description": "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+                    "images": "https://ii1.pepperfry.com/media/catalog/product/n/a/494x544/nakamura-study-table-with-cabinet-in-wenge-finish-by-mintwud-nakamura-study-table-with-cabinet-in-we-gkuozn.jpg",
+                },
+                {
+                    "id": 29,
+                    "title": "Kosmo Harmony Coffee Table in Natural Teak Finish",
+                    "price": 290,
+                    "description": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+                    "images": "https://ii2.pepperfry.com/media/catalog/product/k/o/494x544/kosmo-harmony-coffee-table-in-natural-teak-finish-by-spacewood-kosmo-harmony-coffee-table-in-natural-qqbomr.jpg",
+                },
+                
+                {
+                    "id": 113,
+                    "title": "Simson Plastic Iconic Chair in Black Colour",
+                    "price": 17,
+                    "description": "The Footsofa Is Good For Training And Recreational Purposes",
+                    "images": "https://ii1.pepperfry.com/media/catalog/product/s/i/494x544/simson-study-chair-in-black-colour-by-trevi-furniture-simson-study-chair-in-black-colour-by-trevi-fu-4kxvbg.jpg",
+                },
+                {
+                    "id": 119,
+                    "title": "William Sheesham Wood Arm Chair In Provincial Teak Finish",
+                    "price": 767,
+                    "description": "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
+                    "images":"https://ii3.pepperfry.com/media/catalog/product/w/i/494x544/william-solid-wood-armchair-in-provincial-teak-finish-by-amberville-william-solid-wood-armchair-in-p-8neir8.jpg",
+                },
+                {
+                    "id": 120,
+                    "title": "Aesthetic Fabric Iconic Chair in Multi Colour",
+                    "price": 847,
+                    "description": "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
+                    "images": 'https://ii3.pepperfry.com/media/catalog/product/a/e/494x544/aesthetic-iconic-chair-in-multicolour-by-pansy-furniture-aesthetic-iconic-chair-in-multicolour-by-pa-c89grf.jpg',
+                },
+                {
+                    "id": 123,
+                    "title": "Teak Wood Kutustha Large Mandir With Storage",
+                    "price": 100,
+                    "description": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+                    "images": "https://ii1.pepperfry.com/media/catalog/product/t/e/494x544/teak-wood-mandir-in-golden-by-dzyn-furnitures-teak-wood-mandir-in-golden-by-dzyn-furnitures-h3z3xu.jpg",
+                },
+                {
+                    "id": 128,
+                    "title": "Teak Wood Antarusya Golden Mandir With Storage",
+                    "price": 21,
+                    "description": "The Footsofa Is Good For Training And Recreational Purposes",
+                    "images": "https://ii2.pepperfry.com/media/catalog/product/g/o/494x544/gold-teak-wood-pooja-mandir-without-door-by-dzyn-furnitures-gold-teak-wood-pooja-mandir-without-door-bvprzo.jpg",
+                },{
+                    "id": 3,
+                    "title": "Somerville Fabric 2 Seater Sofa in Dark Olive Coloura",
+                    "price": 138,
+                    "description": "New range of formal chairs are designed keeping you in mind. With fits and styling that will make you stand apart",
+                    "images":"https://ii3.pepperfry.com/media/catalog/product/a/m/494x544/amelia-fabric-1-seater-sofa-in-ash-grey-colour-amelia-fabric-1-seater-sofa-in-ash-grey-colour-kjx8ia.jpg",
+                },
+                {
+                    "id": 19,
+                    "title": "Fidel Velvet 2 Seater Sofa In Teal Blue Colour",
+                    "price": 316,
+                    "description": "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
+                    "images": "https://ii3.pepperfry.com/media/catalog/product/m/i/494x544/miranda-velvet-1-seater-sofa-in-dark-green-colour-by-woodsworth-miranda-velvet-1-seater-sofa-in-dark-qv3qrw.jpg", 
+                },
+                {
+                    "id": 22,
+                    "title": "Garnet Fabric 1 Seater Sofa In Titanium Grey Colour",
+                    "price": 137,
+                    "description": "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
+                    "images": "https://ii3.pepperfry.com/media/catalog/product/s/o/494x544/somerville-2-seater-sofa-in-dark-olive-colour-by--home-somerville-2-seater-sofa-in-dark-olive-colour-bzrgpy.jpg",
+                },
+                {
+                    "id": 25,
+                    "title": "Gustowe Large Writing Table in White Finish",
+                    "price": 771,
+                    "description": "The Footsofa Is Good For Training And Recreational Purposes",
+                    "images": "https://ii2.pepperfry.com/media/catalog/product/g/u/494x544/gustowe-study-table-in-white-colour-by-bluewud-gustowe-study-table-in-white-colour-by-bluewud-jppmjd.jpg",
+                },
+                {
+                    "id": 26,
+                    "title": "Nakamura Hutch Desk in Wenge Finish",
+                    "price": 197,
+                    "description": "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+                    "images": "https://ii1.pepperfry.com/media/catalog/product/n/a/494x544/nakamura-study-table-with-cabinet-in-wenge-finish-by-mintwud-nakamura-study-table-with-cabinet-in-we-gkuozn.jpg",
+                },
+                {
+                    "id": 29,
+                    "title": "Kosmo Harmony Coffee Table in Natural Teak Finish",
+                    "price": 290,
+                    "description": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+                    "images": "https://ii2.pepperfry.com/media/catalog/product/k/o/494x544/kosmo-harmony-coffee-table-in-natural-teak-finish-by-spacewood-kosmo-harmony-coffee-table-in-natural-qqbomr.jpg",
+                },
+                
+                {
+                    "id": 113,
+                    "title": "Simson Plastic Iconic Chair in Black Colour",
+                    "price": 17,
+                    "description": "The Footsofa Is Good For Training And Recreational Purposes",
+                    "images": "https://ii1.pepperfry.com/media/catalog/product/s/i/494x544/simson-study-chair-in-black-colour-by-trevi-furniture-simson-study-chair-in-black-colour-by-trevi-fu-4kxvbg.jpg",
+                },
+                {
+                    "id": 119,
+                    "title": "William Sheesham Wood Arm Chair In Provincial Teak Finish",
+                    "price": 767,
+                    "description": "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
+                    "images":"https://ii3.pepperfry.com/media/catalog/product/w/i/494x544/william-solid-wood-armchair-in-provincial-teak-finish-by-amberville-william-solid-wood-armchair-in-p-8neir8.jpg",
+                },
+                {
+                    "id": 120,
+                    "title": "Aesthetic Fabric Iconic Chair in Multi Colour",
+                    "price": 847,
+                    "description": "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
+                    "images": 'https://ii3.pepperfry.com/media/catalog/product/a/e/494x544/aesthetic-iconic-chair-in-multicolour-by-pansy-furniture-aesthetic-iconic-chair-in-multicolour-by-pa-c89grf.jpg',
+                },
+                {
+                    "id": 123,
+                    "title": "Teak Wood Kutustha Large Mandir With Storage",
+                    "price": 100,
+                    "description": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+                    "images": "https://ii1.pepperfry.com/media/catalog/product/t/e/494x544/teak-wood-mandir-in-golden-by-dzyn-furnitures-teak-wood-mandir-in-golden-by-dzyn-furnitures-h3z3xu.jpg",
+                },
+                {
+                    "id": 128,
+                    "title": "Teak Wood Antarusya Golden Mandir With Storage",
+                    "price": 21,
+                    "description": "The Footsofa Is Good For Training And Recreational Purposes",
+                    "images": "https://ii2.pepperfry.com/media/catalog/product/g/o/494x544/gold-teak-wood-pooja-mandir-without-door-by-dzyn-furnitures-gold-teak-wood-pooja-mandir-without-door-bvprzo.jpg",
+                },
+               
+            ]
+
+//Display Feature
+let container = document.getElementById("container");
+MapData(apiData);
 
 
 // Mapping Original Data
@@ -39,7 +272,7 @@ function MapData(data){
             title: element.title,
             price: element.price,
             description: element.description,
-            image: element.images[0], 
+            image: element.images, 
             quantity:1, 
             rating: '⭐⭐⭐⭐(15 Sold)',  
             disclaimer: "Accessories shown in the image are only for representation and are not part of the product Depending on your screen settings and resolution on your device there may be a slight variance in fabric color and wood polish of the image and actual product. Wood grains will vary from product to product in case of solid wood furniture. Furniture having intricate hand-painted details are individual unique pieces and may have slight distinctions and variance between the picture and actual product.The Primary material is the main material used to manufacture the product and in addition to the primary material there might also be other type of materials used in the manufacturing of the product",
@@ -55,18 +288,19 @@ function MapData(data){
             ]
         }
     })
-    // console.log(a);
+    console.log(a);
     Display(a)
     localStorage.setItem("Product-data",JSON.stringify(a));
 }
+
 
 let wishlistData = JSON.parse(localStorage.getItem("wishlist")) || [];
 
 let CartData = JSON.parse(localStorage.getItem("cart-data")) || [];
 
-//Display Feature
-let container = document.getElementById("container");
+
 function Display(data){
+    console.log(data)
     container.innerHTML = null;
     const productViewData =JSON.parse(localStorage.getItem('product-view')) || [];
     localStorage.setItem("product-view", JSON.stringify(productViewData));

@@ -119,15 +119,23 @@
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
+
+      let signInFlag = false;
       
       SignUpData.forEach(function (element) {
-        if(email.value == element.email && password.value == element.password){
-                alert("Sign in successful");
+          if(email.value == element.email && password.value == element.password){
+            signInFlag = true;
+          }
+      });
+
+      if(signInFlag){
+        alert("Sign in successful");
                 setTimeout(() => {
                   window.location.href = 'index.html';
-                }, 500);
-            }
-      });
+        }, 500);
+      }else{
+        alert("Enter valid inputs")
+      }
     });
 
     let google = document.getElementById("google");
