@@ -90,7 +90,7 @@
         color: #6d726d;
       }
       #card {
-        width: 55%;
+        width: 60%;
         display: flex;
         justify-content: space-around;
         border: 1px solid #6d726d;
@@ -132,7 +132,7 @@
         justify-content: baseline;
         padding: 10px;
       }
-      img{
+      img {
         cursor: pointer;
       }
       .buttondiv button {
@@ -308,7 +308,7 @@
 
     let placeOrder = document.getElementById("placeOrder");
     placeOrder.addEventListener("click", function () {
-      window.location.href = "payment.html";
+      window.open("payment.html", "_blank");
     });
 
     let container = document.getElementById("container");
